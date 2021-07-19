@@ -1,15 +1,15 @@
-webapptest
-==========
-
-Test for interviews
-
-This test is designed to give an overview of your capabilities as a java developer.  The ultimate goal of the test is spelled out in the main method of src/com/proquest/interview/phonebook/PhoneBookImpl.
-
-Implement the TODO comments to the best of your ability.  In addition, you should be looking at how to improve this program.  The DatabaseUtil class should not need to be significantly refactored, although you may do so as long as you do not destroy it's functionality.
-
-You can download this project, make your changes, zip/tar it up and send it back to us, or if you want to impress us, fork it, put your changes in, and send along the url.
-
-Don't spend too much time on this, it's designed as a pre-screening tool to ensure you understand the basics of software engineering.  It isn't a trick question, and yes, it is a mess on purpose, much like so much of real-life code.
+# Read Me
 
 
-Thank you.
+I tried to make some changes both in structures and some code.
+I move the main method to 
+`src/com/proquest/interview/phonebook/PhoneBookApp.java`
+
+
+I made the assumption that `PhoneBookImpl` as the Service Layers where most of the Business Logic should happens there. There was alomost zero business logic here in this project to put in the service layer except for some exception handling. 
+
+The service layer shouldn't get dirty with Database operations such as connections and statements.
+
+I tried to untouch the DatabaseUtil class but added a DAO - Data Access Layer for database operations - only `Create`,  `Retrieve` and `RetrieveAll` in this project.
+
+Try to add an integration test with the Database which should cover CR operations, and also added a Unit Test for Service Layer which I added a `Mockito` library to configure the mock objects.
